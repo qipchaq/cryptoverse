@@ -20,9 +20,10 @@ const Cryptodetails = () => {
     const cryptoDetails = data?.data?.coin
     
     if (isFetching) return 'Loading ...'; 
-    console.log(coinHistory.data)
 
-    const time = ['3h', '24h', '7d', '30d', '1y', '3m', '3y', '5y'];
+    // console.log(coinHistory.data)
+
+    const time = ['3h', '24h', '7d', '30d', '3m', '1y', '3y', '5y'];
 
     const stats = [
         { title: 'Price to USD', value: `$ ${cryptoDetails.price && millify(cryptoDetails.price)}`, icon: <DollarCircleOutlined /> },
@@ -55,11 +56,14 @@ const Cryptodetails = () => {
                 defaultValue='7d'
                 className='select-timeperiod'
                 placeholder='Select Timeperiod'
-                onChange={(value) => setTimePeriod(value)}
+                onChange={(value) => {
+                    console.log(value)
+                    return setTimePeriod(value)
+                }}
             >
                 {time.map((date) => <Option key={date}>{date}</Option>)}
             </Select>
-            {/* <LineChart coinHistory={coinHistory} currentPrice={millify(cryptoDetails?.price)} coinName={cryptoDetails?.name} /> */}
+            <LineChart coinHistory={coinHistory} currentPrice={millify(cryptoDetails?.price)} coinName={cryptoDetails?.name} />
             <Col className='stats-container'>
                 <Col className='coin-value-statistics'>
                     <Col className='coin-value-statistics-heading'>
