@@ -3,7 +3,7 @@ import { Avatar, Button, Menu, Typography } from 'antd';
 import { Link } from 'react-router-dom';
 
 import icon from '../images/cryptocurrency.png'
-import { BulbOutlined, FundOutlined, HomeOutlined, MenuOutlined, MoneyCollectOutlined } from '@ant-design/icons';
+import { BulbOutlined, FundOutlined, HomeOutlined, MenuOutlined } from '@ant-design/icons';
 
 const Navbar = () => {
 
@@ -18,7 +18,7 @@ const Navbar = () => {
     })
 
     useEffect(() => {
-        if (screenSize < 768) {
+        if (screenSize <= 800) {
             setActiveMenu(false)
         } else setActiveMenu(true)
     }, [screenSize])
