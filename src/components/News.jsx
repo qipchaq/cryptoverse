@@ -13,10 +13,10 @@ const News = ({ simplified }) => {
     const { data: cryptoNews } = useGetCryptoNewsQuery({ newsCategory, count: simplified ? 6 : 21 });
     const { data: cryptoCoins } = useGetCryptosQuery(100)
     // console.log(cryptoNews)
-    if (!cryptoNews?.value) return 'Loading ...';
+    if (!cryptoNews?.value) return <Loader />;
 
     return (
-        <Row gutter={[ 24, 24 ]}>
+        <Row gutter={[24, 24]}>
             {!simplified && (
                 <Col span={24}>
                     <Select
