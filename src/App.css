@@ -83,8 +83,6 @@ a:hover {
     .navbar {
         position: sticky;
         top: 0;
-        height: 7vh;
-        padding: 12px;
         z-index: 1;
     }
 
@@ -96,15 +94,14 @@ a:hover {
     }
 
     .logo-container {
-        padding: 0;
+        padding: 12px;
         height: 100%;
     }
 
     .menu-control-container {
         display: block !important;
         right: 12px;
-        top: 50%;
-        transform: translateY(-50%);
+        top: 17px;
     }
 
     .ant-menu {
